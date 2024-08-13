@@ -4,11 +4,6 @@ from src.helper import voice_input, text_to_speech, llm_model_object
 
 st.set_page_config(page_title="AI Voice Assistant", page_icon="🎙️", layout="centered")
 
-headers = {
-    "authorization": st.secrets["GEMINI_API_KEY"],
-    "content-type": "application/json"
-}
-
 def main():
     st.markdown("<h1 style='text-align: center; font-size: 3em;'>AI Voice Assistant 🎙️</h1>", unsafe_allow_html=True)
     st.markdown("<p style='font-size: 1.3em;'>Ask me anything and get a response in text and voice. The audio response can also be downloaded...</p>", unsafe_allow_html=True)
