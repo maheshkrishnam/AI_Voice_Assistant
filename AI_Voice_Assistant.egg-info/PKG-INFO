@@ -6,7 +6,6 @@ Author: Mahesh Krishnam
 Author-email: 220120011@iitdh.ac.in
 Requires-Dist: SpeechRecognition
 Requires-Dist: pipwin
-Requires-Dist: PyAudio
 Requires-Dist: gTTS
 Requires-Dist: google-generativeai
 Requires-Dist: python-dotenv

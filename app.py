@@ -1,4 +1,5 @@
 import streamlit as st
+import re
 from src.helper import voice_input, text_to_speech, llm_model_object
 
 st.set_page_config(page_title="AI Voice Assistant", page_icon="🎙️", layout="centered")
@@ -6,7 +7,17 @@ st.set_page_config(page_title="AI Voice Assistant", page_icon="🎙️", layout=
 def main():
     st.markdown("<h1 style='text-align: center; font-size: 3em;'>AI Voice Assistant 🎙️</h1>", unsafe_allow_html=True)
     st.markdown("<p style='font-size: 1.3em;'>Ask me anything and get a response in text and voice. The audio response can also be downloaded...</p>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 1.3em;'>Genrating response takes time, please wait a while...</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 1.3em;'>Genrating response takes time, please wait</p>", unsafe_allow_html=True)
+    st.write("---")
+    
+    st.markdown("<h3 style='text-align: center; font-size: 1.5em;'>Tips for Better Interaction</h3>", unsafe_allow_html=True)
+    st.markdown("""
+    - Speak clearly and at a moderate pace.
+    - Use the text input if you're in a noisy environment.
+    - Ensure your microphone is working properly before starting.
+    """, unsafe_allow_html=True)
+    
+    st.write("---")
     
     response_placeholder = st.empty()
     audio_placeholder = st.empty()
@@ -23,6 +34,7 @@ def main():
             response_placeholder.markdown(f"**Response:** {response}")
         
         with st.spinner("Generating Audio..."):
+            response = re.sub(r'[^\w\s.,!?]', '', response)
             text_to_speech(response)
             
             audio_file = open("Speech.mp3", "rb")
@@ -35,15 +47,6 @@ def main():
                 file_name="Speech.mp3",
                 mime="audio/mp3"
             )
-
-    st.markdown("---")
-    
-    st.markdown("<h3 style='text-align: center; font-size: 1.5em;'>Tips for Better Interaction</h3>", unsafe_allow_html=True)
-    st.markdown("""
-    - Speak clearly and at a moderate pace.
-    - Use the text input if you're in a noisy environment.
-    - Ensure your microphone is working properly before starting.
-    """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
