@@ -1,6 +1,6 @@
 SpeechRecognition
 pipwin
-PyAudio
+pyaudio
 gTTS
 google-generativeai
 python-dotenv
