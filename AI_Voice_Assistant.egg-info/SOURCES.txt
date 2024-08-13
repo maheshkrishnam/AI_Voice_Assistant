@@ -1,4 +1,3 @@
-README.md
 setup.py
 AI_Voice_Assistant.egg-info/PKG-INFO
 AI_Voice_Assistant.egg-info/SOURCES.txt

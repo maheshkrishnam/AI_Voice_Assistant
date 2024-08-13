@@ -7,5 +7,5 @@ setup(
     author_email="220120011@iitdh.ac.in",
     description=('An AI Voice Assistant that will answer all you wierd questions, just try it out!!'),
     packages=find_packages(),
-    install_requires=["SpeechRecognition","pipwin","gTTS","google-generativeai","python-dotenv","streamlit"]
+    install_requires=["SpeechRecognition","pipwin","pyaudio","gTTS","google-generativeai","python-dotenv","streamlit"]
 )
