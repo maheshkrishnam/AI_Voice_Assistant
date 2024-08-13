@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: AI-Voice-Assistant
+Version: 0.0.0
+Summary: An AI Voice Assistant that will answer all you wierd questions, just try it out!!
+Author: Mahesh Krishnam
+Author-email: 220120011@iitdh.ac.in
+Requires-Dist: SpeechRecognition
+Requires-Dist: pipwin
+Requires-Dist: PyAudio
+Requires-Dist: gTTS
+Requires-Dist: google-generativeai
+Requires-Dist: python-dotenv
+Requires-Dist: streamlit
